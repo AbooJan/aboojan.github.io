@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="iOS," />
 
 
 
@@ -87,15 +87,26 @@
 
 
 
-<meta name="description" content="岭深常得蛟龙在，梧高自有凤凰栖">
-<meta property="og:type" content="website">
-<meta property="og:title" content="AbooJan Blog">
-<meta property="og:url" content="https://github.com/AbooJan/index.html">
+<meta name="description" content="第一部分objc_msgSend  这是Objective-C的方法调用的核心，它可调用一个类的所有方法，不管它有没有暴露出来。   
+例如：TestObj.h 文件：
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950@interface TestObj : NS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="运行时小结">
+<meta property="og:url" content="https://github.com/AbooJan/2017/03/11/RunTimeLearn/index.html">
 <meta property="og:site_name" content="AbooJan Blog">
-<meta property="og:description" content="岭深常得蛟龙在，梧高自有凤凰栖">
+<meta property="og:description" content="第一部分objc_msgSend  这是Objective-C的方法调用的核心，它可调用一个类的所有方法，不管它有没有暴露出来。   
+例如：TestObj.h 文件：
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950@interface TestObj : NS">
+<meta property="og:image" content="https://github.com/AbooJan/2017/03/11/RunTimeLearn/TypeEcodings1.png">
+<meta property="og:image" content="https://github.com/AbooJan/2017/03/11/RunTimeLearn/TypeEcodings2.png">
+<meta property="og:image" content="https://github.com/AbooJan/2017/03/11/RunTimeLearn/MethodEcodings.png">
+<meta property="og:updated_time" content="2017-03-11T14:30:47.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AbooJan Blog">
-<meta name="twitter:description" content="岭深常得蛟龙在，梧高自有凤凰栖">
+<meta name="twitter:title" content="运行时小结">
+<meta name="twitter:description" content="第一部分objc_msgSend  这是Objective-C的方法调用的核心，它可调用一个类的所有方法，不管它有没有暴露出来。   
+例如：TestObj.h 文件：
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950@interface TestObj : NS">
+<meta name="twitter:image" content="https://github.com/AbooJan/2017/03/11/RunTimeLearn/TypeEcodings1.png">
 
 
 
@@ -123,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="https://github.com/AbooJan/"/>
+  <link rel="canonical" href="https://github.com/AbooJan/2017/03/11/RunTimeLearn/"/>
 
 
 
 
 
-  <title> AbooJan Blog </title>
+  <title> 运行时小结 | AbooJan Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -154,9 +165,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -239,9 +248,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -271,10 +280,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2017/03/11/RunTimeLearn/" itemprop="url">
-                  运行时小结
-                </a>
+                运行时小结
               
             
           </h1>
@@ -325,9 +331,7 @@
       
 
       
-        
-          
-            <hr>
+        <hr>
 <h1 id="第一部分"><a href="#第一部分" class="headerlink" title="第一部分"></a>第一部分</h1><p>objc_msgSend  这是Objective-C的方法调用的核心，它可调用一个类的所有方法，不管它有没有暴露出来。   </p>
 <p>例如：<br>TestObj.h 文件：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">@interface TestObj : NSObject</div><div class="line"></div><div class="line">@property (nonatomic, assign) NSInteger userId;</div><div class="line">@property (nonatomic, copy) NSString *userName;</div><div class="line">@property (nonatomic, assign) BOOL gender;</div><div class="line"></div><div class="line"></div><div class="line">+ (NSInteger)test;</div><div class="line">+ (NSString *)testWithArg:(NSInteger)arg1 arg2:(NSString *)arg2;</div><div class="line"></div><div class="line">- (BOOL)isChnage;</div><div class="line"></div><div class="line">@end</div><div class="line">TestObj.m 文件：</div><div class="line"></div><div class="line">@implementation TestObj</div><div class="line">+ (NSInteger)test</div><div class="line">&#123;</div><div class="line">    NSLog(@"这是测试方法");</div><div class="line">   </div><div class="line">    return 6;</div><div class="line">&#125;</div><div class="line"></div><div class="line">+ (NSString *)testWithArg:(NSInteger)arg1 arg2:(NSString *)arg2</div><div class="line">&#123;</div><div class="line">    NSLog(@"测试方法 : %ld -- %@", arg1, arg2);</div><div class="line">   </div><div class="line">    return @"test";</div><div class="line">&#125;</div><div class="line"></div><div class="line">+ (void)test2</div><div class="line">&#123;</div><div class="line">    NSLog(@"内部方法");</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (BOOL)isChnage</div><div class="line">&#123;</div><div class="line">    NSLog(@“有没有改变");</div><div class="line">   </div><div class="line">    return NO;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (NSString *)changeUserName:(NSString *)userName</div><div class="line">&#123;</div><div class="line">    return @"修改后的名字";</div><div class="line">&#125;</div><div class="line"></div><div class="line">@end</div><div class="line"></div></pre></td></tr></table></figure>
@@ -358,303 +362,66 @@
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">/*</span></div><div class="line"> * 1. 如果是一个子类，一般在 initialize 方法中替换方法</div><div class="line"> * 2. 如果是一个分类，一般在 load       方法中实行替换</div><div class="line"> *</div><div class="line"> * 在以上两个方法中替换，是保证它在一启动的时候就实行替换</div><div class="line"> *</div><div class="line"> *</div><div class="line"> * load和initialize有很多共同特点，下面简单列一下：</div><div class="line"> </div><div class="line"> * 1.在不考虑开发者主动使用的情况下，系统最多会调用一次</div><div class="line"> * 2.如果父类和子类都被调用，父类的调用一定在子类之前</div><div class="line"> * 3.都是为了应用运行提前创建合适的运行环境</div><div class="line"> * 4.在使用时都不要过重地依赖于这两个方法，除非真正必要</div><div class="line"> *</div><div class="line"> *</div><div class="line"> * +load 能保证在类的初始化过程中被加载，并保证这种改变应用级别的行为的一致性。</div><div class="line">  * +initialize 在其所属类的方法被调用或类初始化时会被调用，否则它可能永远不会被调用</div><div class="line"> *</div><div class="line"> */</div><div class="line">+ (<span class="keyword">void</span>)load</div><div class="line">&#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"load"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">+ (<span class="keyword">void</span>)initialize</div><div class="line">&#123;</div><div class="line">    <span class="comment">// dispatch_once是GCD中的一个方法，它保证了代码块只执行一次，并让其为一个原子操作，</span></div><div class="line">        <span class="comment">//   保证线程的安 全，避免并发引发问题，认为它是Method Swizzling 的最佳实现</span></div><div class="line"></div><div class="line">   </div><div class="line">    <span class="keyword">static</span> <span class="built_in">dispatch_once_t</span> onceToken;</div><div class="line">    <span class="built_in">dispatch_once</span>(&amp;onceToken, ^&#123;</div><div class="line">        </div><div class="line">              <span class="comment">// 第一种初始化方法</span></div><div class="line">        Class target = [<span class="keyword">self</span> <span class="keyword">class</span>];</div><div class="line">       </div><div class="line">        Method originalMethod = class_getInstanceMethod(target, sel_registerName(<span class="string">"description"</span>));</div><div class="line">        Method swizzMethod = class_getInstanceMethod(target, sel_registerName(<span class="string">"swizzle_description"</span>));</div><div class="line">       </div><div class="line">        </div><div class="line">        <span class="comment">// 第二种初始化方法</span></div><div class="line">        <span class="comment">// Class aClass = object_getClass((id)self);</span></div><div class="line">        <span class="comment">// </span></div><div class="line">        <span class="comment">// Method originalMethod = class_getClassMethod(aClass, @selector(description));</span></div><div class="line">        <span class="comment">// Method swizzledMethod = class_getClassMethod(aClass, @selector(swizzle_description));</span></div><div class="line">       </div><div class="line">       </div><div class="line">        <span class="comment">/*</span></div><div class="line">         *  object_getClass((id)self) 与 [self class] 返回的结果类型都是 Class,</div><div class="line">                    *   但前者为元类,后者为其本身,因为此时 self 为 Class 而不是实例。</div><div class="line">         */</div><div class="line">       </div><div class="line">       </div><div class="line">        <span class="comment">/*</span></div><div class="line">         *  如果类中不存在要替换的方法，那就先用class_addMethod和class_replaceMethod函数添加</div><div class="line">                   *  和替换两个方法的实现；如果类中已经有了想要替换的方法，那么就直接调       </div><div class="line">                   *  用 method_exchangeImplementations函数交换了两个方法的 IMP。</div><div class="line">         *  个人建议将要替换的方法实现出来.</div><div class="line">         */</div><div class="line">       </div><div class="line">       </div><div class="line"><span class="comment">//        BOOL didAddMethod = class_addMethod(target, method_getName(originalMethod), method_getImplementation(swizzMethod), method_getTypeEncoding(swizzMethod));</span></div><div class="line"><span class="comment">//        </span></div><div class="line"><span class="comment">//        if (didAddMethod) &#123;</span></div><div class="line"><span class="comment">//            </span></div><div class="line"><span class="comment">//            class_replaceMethod(target, method_getName(swizzMethod), method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));</span></div><div class="line"><span class="comment">//            </span></div><div class="line"><span class="comment">//        &#125;else&#123;</span></div><div class="line"><span class="comment">//            method_exchangeImplementations(originalMethod, swizzMethod);</span></div><div class="line"><span class="comment">//        &#125;</span></div><div class="line">       </div><div class="line">       </div><div class="line">        <span class="comment">// 如果确定已添加替换的方法，直接执行替换就可以了</span></div><div class="line">        method_exchangeImplementations(originalMethod, swizzMethod);</div><div class="line">       </div><div class="line">    &#125;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="built_in">NSString</span> *)description</div><div class="line">&#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"原来的方法"</span>);</div><div class="line">   </div><div class="line">    <span class="keyword">return</span> [<span class="keyword">super</span> description];</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)swizzle_description</div><div class="line">&#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"这是替换的方法"</span>);</div><div class="line">   </div><div class="line">    <span class="comment">// 本身替换的方法只会执行一次，当执行以下方法的时候，它就会调用该类原来的方法了</span></div><div class="line">    [<span class="keyword">self</span> aboo_description];</div><div class="line">   </div><div class="line">   </div><div class="line">    <span class="comment">// 如果调用以下方法，就会进入死循环</span></div><div class="line">    <span class="comment">// [self description];</span></div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure>
 <p>Demo: <a href="https://github.com/AbooJan/RunTimeDemo.git">https://github.com/AbooJan/RunTimeDemo.git</a></p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://github.com/AbooJan/2017/03/11/LearnNewSkill/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="AbooJan">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/4510934?v=3&s=460">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AbooJan Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/11/LearnNewSkill/" itemprop="url">
-                  怎样学习一项新的技能
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-11T18:27:24+08:00">
-                2017-03-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/iOS/" rel="tag"># iOS</a>
           
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
         
-          
-            <p>我本身是iOS开发工程师，最近应公司要求，需要学习前端开发技术，趁着周末总结一下这段时间的学习过程。</p>
-<p>在小学学加减法的时候，老师通常会先让我们明白：什么是加法呀、什么是减法呀，然后会写几个简单的例子让我们看看，1+1它等于2，2-1它等于1，为什么呢？因为一根手指跟另一根手指凑一块，加起来有2个手指；这里有2个苹果，拿走了一个，就剩下一个了。当我们掌握加减法它的计算规则之后，老师就会给类似的加减法题让我们去练习，从1位数的加减一步一步到多位数的加减，经过不断的练习之后，我们就可以完全掌握这个加减法了。</p>
-<p>对于学习一项新技能的过程，我把它给简化为3个阶段：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1. 建立概念，理解这到底是个什么东西。</div><div class="line">2. 学习实例，掌握它是以一个怎样的规则进行的。</div><div class="line">3. 参与实践，从简单到复杂一步步完全掌握这项技能。</div></pre></td></tr></table></figure></p>
-<p>《异类》的作者格拉德威尔提出个理论叫一万小时理论，一万小时的有效实践可以让一个菜鸟蜕变成一位大神。所以对于一项技能，从上手到精通，是需要经过一个漫长的实践过程的，需要从实践中一步一步形成自己解决问题的方法论，在以后遇到问题时就能快速解决。</p>
-<p>这也是为什么大部分公司的招聘标准里面有工作年限这个要求吧，尤其是大公司，没个3年的工作经验它把你直接Pass掉。但其实很多人即使他工作了个3、5年，能力依然停留在当初参加工作时1、2年的工作水平。</p>
-<p>我觉得机器学习的基本思想也类似这样，比如自动驾驶，首先需要建立一个数学模型去处理汽车自动驾驶这个问题，一开始建立的数学模型是很粗糙、有很大误差的，那怎么去解决这些问题呢？答案就是通过大量的训练。在大量的训练过程中，会遇到各种各样的问题，为了解决遇到的问题，就需要不断调整当初建立的数学模型，从而找到问题的最优解。</p>
-<p>对于一项新的技能，上手不难，难的是把它精通。而精通的过程是很漫长的，需要好好把心沉下来一步一步往前走。在这日新月异的互联网时代，单凭一项技能是很难在互联网行业长久发展的，需要让自己不断成长、不断学习，共勉！</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
       
 
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://github.com/AbooJan/2017/03/11/ProjectDevelopeProgress/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="AbooJan">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/4510934?v=3&s=460">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AbooJan Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/03/11/LearnNewSkill/" rel="next" title="怎样学习一项新的技能">
+                <i class="fa fa-chevron-left"></i> 怎样学习一项新的技能
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2017/03/11/ProjectDevelopeProgress/" itemprop="url">
-                  互联网项目开发流程总结
-                </a>
-              
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-11T18:16:07+08:00">
-                2017-03-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <img src="/2017/03/11/ProjectDevelopeProgress/项目开发流程图.png" alt="项目开发流程图" title="项目开发流程图">
-<ol>
-<li><p>需求的来源由市场、运营、产品等提供，每个需求点都有优先等级数，这个优先级数可能根据用户反馈情况、运营活动、市场营销等。</p>
-</li>
-<li><p>根据开发周期的长短，产品经理从需求池提取一定量优先级高的需求整理成文档，出原型图，提前发给开发人员查阅。定开发周期的时候最好不要太长，一般2个星期左右的时间会比较好，小步快走。</p>
-</li>
-<li><p>等过了第3步之后，如果开发时间总和超出之前指定的dead line ，产品经理需要对需求做部分删减，从而能够在指定时间内完成上线。</p>
-</li>
-<li><p>在第4步Api 制定的时候，我还是比较喜欢前端跟服务端一起商定接口数据返回字段，之前有好几次遇到服务端提供的字段并不能完成需求功能的情况，这样很容易出现做无用工的情况。</p>
-</li>
-<li><p>在产品进入开发阶段，每个版本要分模块来进行开发，一个模块开发完之后就丢给测试部门测试，开发部则进入下一个模块的开发，边开发边改bug 。待下一个模块提测的时候，也作为上一个模块的回归测试。分模块提测的时候，UI设计师也要抽一点时间来验UI。</p>
-</li>
-<li><p>在开发期间，产品经理除了回答和完善当前版本的需求，要开始准备下一个版本的需求了。对于UI设计师，要跟着产品经理走，也要着手准备下一个版本的UI 设计了。对于测试人员，要提前准备好测试用例和测试数据。</p>
-</li>
-<li><p>版本上线之后，要做项目总结，对版本开发进行复盘，每一次都要统计版本的bug 数量和版本质量，开发过程中暴露的问题要及时提出并总结经验。</p>
-</li>
-<li><p>围绕着产品，最好有一个统一的协作工具，集开发、测试、产品一体，自己公司内部搭也好，用在线的工具也好，它主要起一个辅助作用，提高效率。</p>
-</li>
-<li><p>对于开发以外的其他部门，部门自己要提前做好规划，到了什么时间点做什么事情，这样提的需求才好分优先级。</p>
-</li>
-<li><p>项目启动之初，会比较困难些，需要做好各种规范，但跑起来之后就可以像流水线一样，一个版本接一个版本迭代开发，整体效率就会上来了。</p>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
           
           </div>
@@ -662,6 +429,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -681,8 +452,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="https://avatars2.githubusercontent.com/u/4510934?v=3&s=460"
@@ -746,6 +526,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一部分"><span class="nav-number">1.</span> <span class="nav-text">第一部分</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二部分"><span class="nav-number">2.</span> <span class="nav-text">第二部分</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第三部分"><span class="nav-number">3.</span> <span class="nav-text">第三部分</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第四部分"><span class="nav-number">4.</span> <span class="nav-text">第四部分</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第五部分"><span class="nav-number">5.</span> <span class="nav-text">第五部分</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -858,6 +654,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
