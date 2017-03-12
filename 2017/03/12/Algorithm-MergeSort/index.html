@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="项目管理," />
+  <meta name="keywords" content="算法,代码片段," />
 
 
 
@@ -87,30 +87,19 @@
 
 
 
-<meta name="description" content="需求的来源由市场、运营、产品等提供，每个需求点都有优先等级数，这个优先级数可能根据用户反馈情况、运营活动、市场营销等。
-
-根据开发周期的长短，产品经理从需求池提取一定量优先级高的需求整理成文档，出原型图，提前发给开发人员查阅。定开发周期的时候最好不要太长，一般2个星期左右的时间会比较好，小步快走。
-
-等过了第3步之后，如果开发时间总和超出之前指定的dead line ，产品经理需要对需求做部分">
+<meta name="description" content="核心思想是分治法，将数组1分为2，通过递归，把数组拆分成很多个小数组（只有2个元素），然后对小数组进行排序，排序完之后进行合并。
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970void">
 <meta property="og:type" content="article">
-<meta property="og:title" content="互联网项目开发流程总结">
-<meta property="og:url" content="https://github.com/AbooJan/2017/03/11/ProjectDevelopeProgress/index.html">
+<meta property="og:title" content="归并排序">
+<meta property="og:url" content="https://github.com/AbooJan/2017/03/12/Algorithm-MergeSort/index.html">
 <meta property="og:site_name" content="AbooJan Blog">
-<meta property="og:description" content="需求的来源由市场、运营、产品等提供，每个需求点都有优先等级数，这个优先级数可能根据用户反馈情况、运营活动、市场营销等。
-
-根据开发周期的长短，产品经理从需求池提取一定量优先级高的需求整理成文档，出原型图，提前发给开发人员查阅。定开发周期的时候最好不要太长，一般2个星期左右的时间会比较好，小步快走。
-
-等过了第3步之后，如果开发时间总和超出之前指定的dead line ，产品经理需要对需求做部分">
-<meta property="og:image" content="https://github.com/AbooJan/2017/03/11/ProjectDevelopeProgress/项目开发流程图.png">
-<meta property="og:updated_time" content="2017-03-12T02:44:19.000Z">
+<meta property="og:description" content="核心思想是分治法，将数组1分为2，通过递归，把数组拆分成很多个小数组（只有2个元素），然后对小数组进行排序，排序完之后进行合并。
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970void">
+<meta property="og:updated_time" content="2017-03-12T10:17:04.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="互联网项目开发流程总结">
-<meta name="twitter:description" content="需求的来源由市场、运营、产品等提供，每个需求点都有优先等级数，这个优先级数可能根据用户反馈情况、运营活动、市场营销等。
-
-根据开发周期的长短，产品经理从需求池提取一定量优先级高的需求整理成文档，出原型图，提前发给开发人员查阅。定开发周期的时候最好不要太长，一般2个星期左右的时间会比较好，小步快走。
-
-等过了第3步之后，如果开发时间总和超出之前指定的dead line ，产品经理需要对需求做部分">
-<meta name="twitter:image" content="https://github.com/AbooJan/2017/03/11/ProjectDevelopeProgress/项目开发流程图.png">
+<meta name="twitter:title" content="归并排序">
+<meta name="twitter:description" content="核心思想是分治法，将数组1分为2，通过递归，把数组拆分成很多个小数组（只有2个元素），然后对小数组进行排序，排序完之后进行合并。
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970void">
 
 
 
@@ -138,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="https://github.com/AbooJan/2017/03/11/ProjectDevelopeProgress/"/>
+  <link rel="canonical" href="https://github.com/AbooJan/2017/03/12/Algorithm-MergeSort/"/>
 
 
 
 
 
-  <title> 互联网项目开发流程总结 | AbooJan Blog </title>
+  <title> 归并排序 | AbooJan Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -273,7 +262,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://github.com/AbooJan/2017/03/11/ProjectDevelopeProgress/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/AbooJan/2017/03/12/Algorithm-MergeSort/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="AbooJan">
@@ -294,7 +283,7 @@
             
             
               
-                互联网项目开发流程总结
+                归并排序
               
             
           </h1>
@@ -309,8 +298,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-11T18:16:07+08:00">
-                2017-03-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-12T17:50:06+08:00">
+                2017-03-12
               </time>
             
 
@@ -332,8 +321,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
                   </a>
                 </span>
 
@@ -367,29 +356,8 @@
       
 
       
-        <img src="/2017/03/11/ProjectDevelopeProgress/项目开发流程图.png" alt="项目开发流程图" title="项目开发流程图">
-<ol>
-<li><p>需求的来源由市场、运营、产品等提供，每个需求点都有优先等级数，这个优先级数可能根据用户反馈情况、运营活动、市场营销等。</p>
-</li>
-<li><p>根据开发周期的长短，产品经理从需求池提取一定量优先级高的需求整理成文档，出原型图，提前发给开发人员查阅。定开发周期的时候最好不要太长，一般2个星期左右的时间会比较好，小步快走。</p>
-</li>
-<li><p>等过了第3步之后，如果开发时间总和超出之前指定的dead line ，产品经理需要对需求做部分删减，从而能够在指定时间内完成上线。</p>
-</li>
-<li><p>在第4步Api 制定的时候，我还是比较喜欢前端跟服务端一起商定接口数据返回字段，之前有好几次遇到服务端提供的字段并不能完成需求功能的情况，这样很容易出现做无用工的情况。</p>
-</li>
-<li><p>在产品进入开发阶段，每个版本要分模块来进行开发，一个模块开发完之后就丢给测试部门测试，开发部则进入下一个模块的开发，边开发边改bug 。待下一个模块提测的时候，也作为上一个模块的回归测试。分模块提测的时候，UI设计师也要抽一点时间来验UI。</p>
-</li>
-<li><p>在开发期间，产品经理除了回答和完善当前版本的需求，要开始准备下一个版本的需求了。对于UI设计师，要跟着产品经理走，也要着手准备下一个版本的UI 设计了。对于测试人员，要提前准备好测试用例和测试数据。</p>
-</li>
-<li><p>版本上线之后，要做项目总结，对版本开发进行复盘，每一次都要统计版本的bug 数量和版本质量，开发过程中暴露的问题要及时提出并总结经验。</p>
-</li>
-<li><p>围绕着产品，最好有一个统一的协作工具，集开发、测试、产品一体，自己公司内部搭也好，用在线的工具也好，它主要起一个辅助作用，提高效率。</p>
-</li>
-<li><p>对于开发以外的其他部门，部门自己要提前做好规划，到了什么时间点做什么事情，这样提的需求才好分优先级。</p>
-</li>
-<li><p>项目启动之初，会比较困难些，需要做好各种规范，但跑起来之后就可以像流水线一样，一个版本接一个版本迭代开发，整体效率就会上来了。</p>
-</li>
-</ol>
+        <p>核心思想是分治法，将数组1分为2，通过递归，把数组拆分成很多个小数组（只有2个元素），然后对小数组进行排序，排序完之后进行合并。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">mergeArray</span><span class="params">(<span class="keyword">int</span> targetArr[], <span class="keyword">int</span> start, <span class="keyword">int</span> mid, <span class="keyword">int</span> last, <span class="keyword">int</span> tmpArr[])</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> k = <span class="number">0</span>;</div><div class="line">    <span class="keyword">int</span> backupStart = start;</div><div class="line">    </div><div class="line">    <span class="comment">// 把数组1分为2</span></div><div class="line">    <span class="keyword">int</span> leftArrLast = mid;</div><div class="line">    <span class="keyword">int</span> rightArrStart = mid+<span class="number">1</span>;</div><div class="line">    </div><div class="line">    <span class="comment">// 合并2个数组</span></div><div class="line">    <span class="keyword">while</span> (start &lt;= leftArrLast &amp;&amp; rightArrStart &lt;= last) &#123;</div><div class="line">        </div><div class="line">        <span class="comment">// 如果左边元素比右边元素大</span></div><div class="line">        <span class="keyword">if</span> (targetArr[start] &lt;= targetArr[rightArrStart]) &#123;</div><div class="line">            <span class="comment">// 把左边元素放入临时数组中</span></div><div class="line">            tmpArr[k] = targetArr[start];</div><div class="line">            start++;</div><div class="line">            </div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            <span class="comment">// 如果右边元素较小，把右边元素放入临时数组中</span></div><div class="line">            tmpArr[k] = targetArr[rightArrStart];</div><div class="line">            rightArrStart++;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        k++;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">// 左边2边，肯定会有1边多出有元素没比较</span></div><div class="line">    </div><div class="line">    <span class="comment">// 把左边剩余的部分放入临时数组中</span></div><div class="line">    <span class="keyword">while</span> (start &lt;= leftArrLast) &#123;</div><div class="line">        tmpArr[k] = targetArr[start];</div><div class="line">        k++;</div><div class="line">        start++;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">// 把右边剩余部分放入临时数组中</span></div><div class="line">    <span class="keyword">while</span> (rightArrStart &lt;= last) &#123;</div><div class="line">        tmpArr[k] = targetArr[rightArrStart];</div><div class="line">        k++;</div><div class="line">        rightArrStart++;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">// 把排序好的合并数组放入原来数组中，注意原来数组的开始索引，从backStart+i开始</span></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; k; i++) &#123;</div><div class="line">        targetArr[backupStart+i] = tmpArr[i];</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">mergeSort</span><span class="params">(<span class="keyword">int</span> targetArr[], <span class="keyword">int</span> start, <span class="keyword">int</span> last, <span class="keyword">int</span> tmpArr[])</span></span></div><div class="line">&#123;</div><div class="line">    </div><div class="line">    <span class="comment">// 传入1个临时的 tmpArr 是为了节省内存开销</span></div><div class="line">    </div><div class="line">    <span class="keyword">if</span> (start &lt; last) &#123;</div><div class="line">        </div><div class="line">        <span class="comment">// 1分为2，分而治之</span></div><div class="line">        <span class="keyword">int</span> mid = (start+last)/<span class="number">2</span>;</div><div class="line">        </div><div class="line">        <span class="comment">// 对左边元素进行排序</span></div><div class="line">        mergeSort(targetArr, start, mid, tmpArr);</div><div class="line">        </div><div class="line">        <span class="comment">// 对右边元素进行排序, 索引从 mid+1 开始</span></div><div class="line">        mergeSort(targetArr, mid+<span class="number">1</span>, last, tmpArr);</div><div class="line">        </div><div class="line">        <span class="comment">// 合并左右2边的排序数组</span></div><div class="line">        mergeArray(targetArr, start, mid, last, tmpArr);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -413,7 +381,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/项目管理/" rel="tag"># 项目管理</a>
+            <a href="/tags/算法/" rel="tag"># 算法</a>
+          
+            <a href="/tags/代码片段/" rel="tag"># 代码片段</a>
           
         </div>
       
@@ -426,8 +396,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/10/04/VaporPractice5/" rel="next" title="Vapor 实战5">
-                <i class="fa fa-chevron-left"></i> Vapor 实战5
+              <a href="/2017/03/12/AppNetworkStructure/" rel="next" title="App网络层的思考">
+                <i class="fa fa-chevron-left"></i> App网络层的思考
               </a>
             
           </div>
@@ -436,8 +406,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/11/LearnNewSkill/" rel="prev" title="怎样学习一项新的技能">
-                怎样学习一项新的技能 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/03/12/Algorithm-QuickSort/" rel="prev" title="快速排序">
+                快速排序 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
