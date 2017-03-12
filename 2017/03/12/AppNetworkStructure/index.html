@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="项目管理," />
+  <meta name="keywords" content="iOS," />
 
 
 
@@ -87,30 +87,36 @@
 
 
 
-<meta name="description" content="需求的来源由市场、运营、产品等提供，每个需求点都有优先等级数，这个优先级数可能根据用户反馈情况、运营活动、市场营销等。
+<meta name="description" content="App开发基本离不开网络请求，网络层应该怎么去搭建才能更方便使用、更专注于业务逻辑？
+自个儿琢磨了一段时间，也参考了一些博客和开源框架，于是有了以下的网络层架构图。主要包含2大块，缓存层和网络请求层。
 
-根据开发周期的长短，产品经理从需求池提取一定量优先级高的需求整理成文档，出原型图，提前发给开发人员查阅。定开发周期的时候最好不要太长，一般2个星期左右的时间会比较好，小步快走。
+Github:https://github.com/AbooJan/AJNetworking
 
-等过了第3步之后，如果开发时间总和超出之前指定的dead line ，产品经理需要对需求做部分">
+
+缓存层大部分App都会针对某些接口设计缓存。一方面是为了在无网络或网络请求失败的时候有数据展示，而">
 <meta property="og:type" content="article">
-<meta property="og:title" content="互联网项目开发流程总结">
-<meta property="og:url" content="https://github.com/AbooJan/2017/03/11/ProjectDevelopeProgress/index.html">
+<meta property="og:title" content="App网络层的思考">
+<meta property="og:url" content="https://github.com/AbooJan/2017/03/12/AppNetworkStructure/index.html">
 <meta property="og:site_name" content="AbooJan Blog">
-<meta property="og:description" content="需求的来源由市场、运营、产品等提供，每个需求点都有优先等级数，这个优先级数可能根据用户反馈情况、运营活动、市场营销等。
+<meta property="og:description" content="App开发基本离不开网络请求，网络层应该怎么去搭建才能更方便使用、更专注于业务逻辑？
+自个儿琢磨了一段时间，也参考了一些博客和开源框架，于是有了以下的网络层架构图。主要包含2大块，缓存层和网络请求层。
 
-根据开发周期的长短，产品经理从需求池提取一定量优先级高的需求整理成文档，出原型图，提前发给开发人员查阅。定开发周期的时候最好不要太长，一般2个星期左右的时间会比较好，小步快走。
+Github:https://github.com/AbooJan/AJNetworking
 
-等过了第3步之后，如果开发时间总和超出之前指定的dead line ，产品经理需要对需求做部分">
-<meta property="og:image" content="https://github.com/AbooJan/2017/03/11/ProjectDevelopeProgress/项目开发流程图.png">
-<meta property="og:updated_time" content="2017-03-12T02:44:19.000Z">
+
+缓存层大部分App都会针对某些接口设计缓存。一方面是为了在无网络或网络请求失败的时候有数据展示，而">
+<meta property="og:image" content="https://github.com/AbooJan/2017/03/12/AppNetworkStructure/NetworkStructure.png">
+<meta property="og:updated_time" content="2017-03-12T03:07:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="互联网项目开发流程总结">
-<meta name="twitter:description" content="需求的来源由市场、运营、产品等提供，每个需求点都有优先等级数，这个优先级数可能根据用户反馈情况、运营活动、市场营销等。
+<meta name="twitter:title" content="App网络层的思考">
+<meta name="twitter:description" content="App开发基本离不开网络请求，网络层应该怎么去搭建才能更方便使用、更专注于业务逻辑？
+自个儿琢磨了一段时间，也参考了一些博客和开源框架，于是有了以下的网络层架构图。主要包含2大块，缓存层和网络请求层。
 
-根据开发周期的长短，产品经理从需求池提取一定量优先级高的需求整理成文档，出原型图，提前发给开发人员查阅。定开发周期的时候最好不要太长，一般2个星期左右的时间会比较好，小步快走。
+Github:https://github.com/AbooJan/AJNetworking
 
-等过了第3步之后，如果开发时间总和超出之前指定的dead line ，产品经理需要对需求做部分">
-<meta name="twitter:image" content="https://github.com/AbooJan/2017/03/11/ProjectDevelopeProgress/项目开发流程图.png">
+
+缓存层大部分App都会针对某些接口设计缓存。一方面是为了在无网络或网络请求失败的时候有数据展示，而">
+<meta name="twitter:image" content="https://github.com/AbooJan/2017/03/12/AppNetworkStructure/NetworkStructure.png">
 
 
 
@@ -138,13 +144,13 @@
 
 
 
-  <link rel="canonical" href="https://github.com/AbooJan/2017/03/11/ProjectDevelopeProgress/"/>
+  <link rel="canonical" href="https://github.com/AbooJan/2017/03/12/AppNetworkStructure/"/>
 
 
 
 
 
-  <title> 互联网项目开发流程总结 | AbooJan Blog </title>
+  <title> App网络层的思考 | AbooJan Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -273,7 +279,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://github.com/AbooJan/2017/03/11/ProjectDevelopeProgress/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/AbooJan/2017/03/12/AppNetworkStructure/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="AbooJan">
@@ -294,7 +300,7 @@
             
             
               
-                互联网项目开发流程总结
+                App网络层的思考
               
             
           </h1>
@@ -309,8 +315,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-11T18:16:07+08:00">
-                2017-03-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-12T11:03:04+08:00">
+                2017-03-12
               </time>
             
 
@@ -332,8 +338,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
+                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS开发</span>
                   </a>
                 </span>
 
@@ -367,29 +373,21 @@
       
 
       
-        <img src="/2017/03/11/ProjectDevelopeProgress/项目开发流程图.png" alt="项目开发流程图" title="项目开发流程图">
-<ol>
-<li><p>需求的来源由市场、运营、产品等提供，每个需求点都有优先等级数，这个优先级数可能根据用户反馈情况、运营活动、市场营销等。</p>
-</li>
-<li><p>根据开发周期的长短，产品经理从需求池提取一定量优先级高的需求整理成文档，出原型图，提前发给开发人员查阅。定开发周期的时候最好不要太长，一般2个星期左右的时间会比较好，小步快走。</p>
-</li>
-<li><p>等过了第3步之后，如果开发时间总和超出之前指定的dead line ，产品经理需要对需求做部分删减，从而能够在指定时间内完成上线。</p>
-</li>
-<li><p>在第4步Api 制定的时候，我还是比较喜欢前端跟服务端一起商定接口数据返回字段，之前有好几次遇到服务端提供的字段并不能完成需求功能的情况，这样很容易出现做无用工的情况。</p>
-</li>
-<li><p>在产品进入开发阶段，每个版本要分模块来进行开发，一个模块开发完之后就丢给测试部门测试，开发部则进入下一个模块的开发，边开发边改bug 。待下一个模块提测的时候，也作为上一个模块的回归测试。分模块提测的时候，UI设计师也要抽一点时间来验UI。</p>
-</li>
-<li><p>在开发期间，产品经理除了回答和完善当前版本的需求，要开始准备下一个版本的需求了。对于UI设计师，要跟着产品经理走，也要着手准备下一个版本的UI 设计了。对于测试人员，要提前准备好测试用例和测试数据。</p>
-</li>
-<li><p>版本上线之后，要做项目总结，对版本开发进行复盘，每一次都要统计版本的bug 数量和版本质量，开发过程中暴露的问题要及时提出并总结经验。</p>
-</li>
-<li><p>围绕着产品，最好有一个统一的协作工具，集开发、测试、产品一体，自己公司内部搭也好，用在线的工具也好，它主要起一个辅助作用，提高效率。</p>
-</li>
-<li><p>对于开发以外的其他部门，部门自己要提前做好规划，到了什么时间点做什么事情，这样提的需求才好分优先级。</p>
-</li>
-<li><p>项目启动之初，会比较困难些，需要做好各种规范，但跑起来之后就可以像流水线一样，一个版本接一个版本迭代开发，整体效率就会上来了。</p>
-</li>
-</ol>
+        <p>App开发基本离不开网络请求，网络层应该怎么去搭建才能更方便使用、更专注于业务逻辑？</p>
+<p>自个儿琢磨了一段时间，也参考了一些博客和开源框架，于是有了以下的网络层架构图。主要包含2大块，缓存层和网络请求层。</p>
+<ul>
+<li>Github:<a href="https://github.com/AbooJan/AJNetworking">https://github.com/AbooJan/AJNetworking</a></li>
+</ul>
+<img src="/2017/03/12/AppNetworkStructure/NetworkStructure.png" alt="网络层结构设计" title="网络层结构设计">
+<h2 id="缓存层"><a href="#缓存层" class="headerlink" title="缓存层"></a>缓存层</h2><p>大部分App都会针对某些接口设计缓存。<br>一方面是为了在无网络或网络请求失败的时候有数据展示，而不是空白一片，这样用户体验会更好；<br>另一方面是为了节省资源，如果本身接口的数据更新不频繁的，没必要每次都去发起网络请求去服务器取数据，只需读缓存就可以了，例如省市区数据。</p>
+<p>针对以上问题，我想不如每个接口都设计2个缓存配置项，一个用于配置是否需要缓存数据，另一个配置缓存过期时间。<br>在缓存有效时间内发起的网络请求，底层不会真正发起网络请求，只是去读取缓存数据然后返回结果。<br>如果缓存过期时间配置是永久有效的，则先读取缓存数据，然后发起网络请求，会回调2次。这种配置主要是为了在无网络或者是网络请求失败的时候有数据展示。</p>
+<p>在框架中，我使用了开源库 <a href="https://github.com/spotify/SPTPersistentCache">SPTPersistentCache</a>, 它是LRU缓存设计，可以设置缓存数据有效时间和缓存自动回收。</p>
+<h2 id="网络请求层"><a href="#网络请求层" class="headerlink" title="网络请求层"></a>网络请求层</h2><p>这是核心层，里面包含网络监测、JSON数据转化和缓存处理。<br>每一次请求都会先检查网络是否连接，如果无网络，直接返回错误。<br>如果网络请求失败，例如网络超时或者是服务器错误，则会返回错误。<br>当网络请求成功并有数据返回时，会判断当前请求是否有设置缓存，如果有则会先把数据缓存起来，然后回调成功结果。</p>
+<p>网络请求是封装开源框架 <a href="https://github.com/AFNetworking/AFNetworking">AFNetwoking</a>，请求参数是以<code>NSDictionary</code> 格式传入，返回的则是JSON数据。</p>
+<p>我觉得请求参数以字典的形式很不方便，写起来麻烦，维护起来也麻烦，如果某个接口参数变了，需要找到那个网络发起的位置，然后修改字典的key。<br>针对以上问题，我利用开源框架 <a href="https://github.com/CoderMJLee/MJExtension">MJExtension</a>，把每个接口的参数以数据Bean的形式管理，一个接口对应一个Bean。发起网络请求的时候只需传入这个Bean的实例，网络层会在里面转成字典形式，然后发起请求。</p>
+<p>另外一个是网络返回的JSON数据，如果我们每次都需要在业务层对返回的JSON数据进行转化，这样重复代码很多，写起来也不方便。<br>针对此问题，我在网络层里面把返回的JSON数据利用框架 <code>MJExtension</code> 转成数据Bean，然后返回给业务层，这样业务层拿到就可以用了，方便。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>总的来说，就是把数据的处理合并在一起，在业务层直接拿就可以了。</p>
+<p>以上是我对网络层的一些思考，不足之处，还请多多指教。</p>
 
       
     </div>
@@ -413,7 +411,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/项目管理/" rel="tag"># 项目管理</a>
+            <a href="/tags/iOS/" rel="tag"># iOS</a>
           
         </div>
       
@@ -426,8 +424,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/10/04/VaporPractice5/" rel="next" title="Vapor 实战5">
-                <i class="fa fa-chevron-left"></i> Vapor 实战5
+              <a href="/2017/03/11/RunTimeLearn/" rel="next" title="运行时小结">
+                <i class="fa fa-chevron-left"></i> 运行时小结
               </a>
             
           </div>
@@ -435,10 +433,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/11/LearnNewSkill/" rel="prev" title="怎样学习一项新的技能">
-                怎样学习一项新的技能 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -485,8 +479,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="https://avatars2.githubusercontent.com/u/4510934?v=3&s=460"
@@ -559,6 +562,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#缓存层"><span class="nav-number">1.</span> <span class="nav-text">缓存层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络请求层"><span class="nav-number">2.</span> <span class="nav-text">网络请求层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
