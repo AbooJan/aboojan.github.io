@@ -260,6 +260,157 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://github.com/AbooJan/2016/10/04/VaporPractice5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="AbooJan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/4510934?v=3&s=460">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AbooJan Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/04/VaporPractice5/" itemprop="url">
+                  Vapor 实战5
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-04T19:30:05+08:00">
+                2016-10-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vapor/" itemprop="url" rel="index">
+                    <span itemprop="name">Vapor</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>服务端拿到的客户端请求都是 <code>Request</code> 类型，它是框架 <code>HTTP</code> 里面的一个类。</p>
+<p>一个 <code>Request</code> 实例，包好以下几个基本属性：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">var</span> method: <span class="type">Method</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">var</span> uri: <span class="type">URI</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">var</span> parameters: <span class="type">Node</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">var</span> headers: [<span class="type">HeaderKey</span>: <span class="type">String</span>]</div><div class="line"><span class="keyword">public</span> <span class="keyword">var</span> body: <span class="type">Body</span></div><div class="line"><span class="keyword">public</span> <span class="keyword">var</span> data: <span class="type">Content</span></div></pre></td></tr></table></figure>
+<p>Vapor支持的 <code>HTTP</code> 请求方法包括：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">enum</span> <span class="title">Method</span> </span>&#123;</div><div class="line">    <span class="keyword">case</span> delete</div><div class="line">    <span class="keyword">case</span> <span class="keyword">get</span></div><div class="line">    <span class="keyword">case</span> head</div><div class="line">    <span class="keyword">case</span> post</div><div class="line">    <span class="keyword">case</span> put</div><div class="line">    <span class="keyword">case</span> connect</div><div class="line">    <span class="keyword">case</span> options</div><div class="line">    <span class="keyword">case</span> trace</div><div class="line">    <span class="keyword">case</span> patch</div><div class="line">    <span class="keyword">case</span> other(method: <span class="type">String</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure> 
+<h3 id="URI"><a href="#URI" class="headerlink" title="URI"></a>URI</h3><p>例如一个HTTP请求：<code>https://www.google.com/search?query=vapor#fragments</code><br>它对应的属性的值如下：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> scheme = request.uri.scheme;  <span class="comment">// https</span></div><div class="line"><span class="keyword">let</span> host = request.uri.host;      <span class="comment">// www.google.com</span></div><div class="line"><span class="keyword">let</span> path = request.uri.path;      <span class="comment">// /search</span></div><div class="line"><span class="keyword">let</span> query = request.uri.query;    <span class="comment">// query=vapor</span></div><div class="line"><span class="keyword">let</span> fragment = request.uri.fragment;  <span class="comment">// fragments</span></div></pre></td></tr></table></figure>
+<h3 id="Headers"><a href="#Headers" class="headerlink" title="Headers"></a>Headers</h3><p>可以通过 <code>request.headers[&quot;key&quot;]</code> 来获取对应的请求头部信息，例如：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> contentType = request.headers[<span class="string">"Content-Type"</span>];</div><div class="line"><span class="keyword">let</span> token = request.headers[<span class="string">"Authorization"</span>];</div></pre></td></tr></table></figure>
+<h3 id="请求体"><a href="#请求体" class="headerlink" title="请求体"></a>请求体</h3><p>拿到客户端传过来的值有多种方法，可以是:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">- request.data[<span class="string">"key"</span>]</div><div class="line">- request.query?[<span class="string">"key"</span>]</div><div class="line">- request.parameters[<span class="string">"key"</span>]</div><div class="line">- request.body</div><div class="line">- request.json[<span class="string">"key"</span>]</div></pre></td></tr></table></figure>
+<p><code>request.data[&quot;key&quot;]</code> 是常用的获取传值的方法。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://github.com/AbooJan/2016/10/04/VaporPractice4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1118,7 +1269,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1129,7 +1280,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1140,7 +1291,7 @@
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>
