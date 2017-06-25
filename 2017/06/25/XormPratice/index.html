@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="算法,代码片段," />
+  <meta name="keywords" content="Web Server,xorm," />
 
 
 
@@ -87,19 +87,22 @@
 
 
 
-<meta name="description" content="核心思想是分治法，将数组1分为2，通过递归，把数组拆分成很多个小数组（只有2个元素），然后对小数组进行排序，排序完之后进行合并。
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970void">
+<meta name="description" content="Golang 的 ORM 框架有很多，我这里使用的国产的 xorm [http://xorm.io/], 它包含了一个命令行工具用以从数据库生成databean。
+PostgreSQL 配置
+在 $PGDATA 指向的文件夹里有一个文件 postgresql.conf, 参数listen_addresses 可以配置数据库的监听IP地址，默认值为 localhost , 如果把它的值设为 * 符">
 <meta property="og:type" content="article">
-<meta property="og:title" content="归并排序">
-<meta property="og:url" content="https://github.com/AbooJan/2017/03/12/Algorithm-MergeSort/index.html">
+<meta property="og:title" content="Golang ORM + PostgreSQL">
+<meta property="og:url" content="https://github.com/AbooJan/2017/06/25/XormPratice/index.html">
 <meta property="og:site_name" content="AbooJan Blog">
-<meta property="og:description" content="核心思想是分治法，将数组1分为2，通过递归，把数组拆分成很多个小数组（只有2个元素），然后对小数组进行排序，排序完之后进行合并。
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970void">
-<meta property="og:updated_time" content="2017-03-12T10:17:04.000Z">
+<meta property="og:description" content="Golang 的 ORM 框架有很多，我这里使用的国产的 xorm [http://xorm.io/], 它包含了一个命令行工具用以从数据库生成databean。
+PostgreSQL 配置
+在 $PGDATA 指向的文件夹里有一个文件 postgresql.conf, 参数listen_addresses 可以配置数据库的监听IP地址，默认值为 localhost , 如果把它的值设为 * 符">
+<meta property="og:updated_time" content="2017-06-25T11:06:20.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="归并排序">
-<meta name="twitter:description" content="核心思想是分治法，将数组1分为2，通过递归，把数组拆分成很多个小数组（只有2个元素），然后对小数组进行排序，排序完之后进行合并。
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970void">
+<meta name="twitter:title" content="Golang ORM + PostgreSQL">
+<meta name="twitter:description" content="Golang 的 ORM 框架有很多，我这里使用的国产的 xorm [http://xorm.io/], 它包含了一个命令行工具用以从数据库生成databean。
+PostgreSQL 配置
+在 $PGDATA 指向的文件夹里有一个文件 postgresql.conf, 参数listen_addresses 可以配置数据库的监听IP地址，默认值为 localhost , 如果把它的值设为 * 符">
 
 
 
@@ -127,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="https://github.com/AbooJan/2017/03/12/Algorithm-MergeSort/"/>
+  <link rel="canonical" href="https://github.com/AbooJan/2017/06/25/XormPratice/"/>
 
 
 
 
 
-  <title> 归并排序 | AbooJan Blog </title>
+  <title> Golang ORM + PostgreSQL | AbooJan Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -262,7 +265,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://github.com/AbooJan/2017/03/12/Algorithm-MergeSort/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/AbooJan/2017/06/25/XormPratice/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="AbooJan">
@@ -283,7 +286,7 @@
             
             
               
-                归并排序
+                Golang ORM + PostgreSQL
               
             
           </h1>
@@ -298,8 +301,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-12T17:50:06+08:00">
-                2017-03-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-25T17:30:28+08:00">
+                2017-06-25
               </time>
             
 
@@ -321,8 +324,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/算法/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
+                  <a href="/categories/Golang/" itemprop="url" rel="index">
+                    <span itemprop="name">Golang</span>
                   </a>
                 </span>
 
@@ -356,8 +359,65 @@
       
 
       
-        <p>核心思想是分治法，将数组1分为2，通过递归，把数组拆分成很多个小数组（只有2个元素），然后对小数组进行排序，排序完之后进行合并。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">mergeArray</span><span class="params">(<span class="keyword">int</span> targetArr[], <span class="keyword">int</span> start, <span class="keyword">int</span> mid, <span class="keyword">int</span> last, <span class="keyword">int</span> tmpArr[])</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> k = <span class="number">0</span>;</div><div class="line">    <span class="keyword">int</span> backupStart = start;</div><div class="line">    </div><div class="line">    <span class="comment">// 把数组1分为2</span></div><div class="line">    <span class="keyword">int</span> leftArrLast = mid;</div><div class="line">    <span class="keyword">int</span> rightArrStart = mid+<span class="number">1</span>;</div><div class="line">    </div><div class="line">    <span class="comment">// 合并2个数组</span></div><div class="line">    <span class="keyword">while</span> (start &lt;= leftArrLast &amp;&amp; rightArrStart &lt;= last) &#123;</div><div class="line">        </div><div class="line">        <span class="comment">// 如果左边元素比右边元素大</span></div><div class="line">        <span class="keyword">if</span> (targetArr[start] &lt;= targetArr[rightArrStart]) &#123;</div><div class="line">            <span class="comment">// 把左边元素放入临时数组中</span></div><div class="line">            tmpArr[k] = targetArr[start];</div><div class="line">            start++;</div><div class="line">            </div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            <span class="comment">// 如果右边元素较小，把右边元素放入临时数组中</span></div><div class="line">            tmpArr[k] = targetArr[rightArrStart];</div><div class="line">            rightArrStart++;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        k++;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">// 左边2边，肯定会有1边多出有元素没比较</span></div><div class="line">    </div><div class="line">    <span class="comment">// 把左边剩余的部分放入临时数组中</span></div><div class="line">    <span class="keyword">while</span> (start &lt;= leftArrLast) &#123;</div><div class="line">        tmpArr[k] = targetArr[start];</div><div class="line">        k++;</div><div class="line">        start++;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">// 把右边剩余部分放入临时数组中</span></div><div class="line">    <span class="keyword">while</span> (rightArrStart &lt;= last) &#123;</div><div class="line">        tmpArr[k] = targetArr[rightArrStart];</div><div class="line">        k++;</div><div class="line">        rightArrStart++;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">// 把排序好的合并数组放入原来数组中，注意原来数组的开始索引，从backStart+i开始</span></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; k; i++) &#123;</div><div class="line">        targetArr[backupStart+i] = tmpArr[i];</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">mergeSort</span><span class="params">(<span class="keyword">int</span> targetArr[], <span class="keyword">int</span> start, <span class="keyword">int</span> last, <span class="keyword">int</span> tmpArr[])</span></span></div><div class="line">&#123;</div><div class="line">    </div><div class="line">    <span class="comment">// 传入1个临时的 tmpArr 是为了节省内存开销</span></div><div class="line">    </div><div class="line">    <span class="keyword">if</span> (start &lt; last) &#123;</div><div class="line">        </div><div class="line">        <span class="comment">// 1分为2，分而治之</span></div><div class="line">        <span class="keyword">int</span> mid = (start+last)/<span class="number">2</span>;</div><div class="line">        </div><div class="line">        <span class="comment">// 对左边元素进行排序</span></div><div class="line">        mergeSort(targetArr, start, mid, tmpArr);</div><div class="line">        </div><div class="line">        <span class="comment">// 对右边元素进行排序, 索引从 mid+1 开始</span></div><div class="line">        mergeSort(targetArr, mid+<span class="number">1</span>, last, tmpArr);</div><div class="line">        </div><div class="line">        <span class="comment">// 合并左右2边的排序数组</span></div><div class="line">        mergeArray(targetArr, start, mid, last, tmpArr);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <p>Golang 的 ORM 框架有很多，我这里使用的国产的 <code>xorm</code> [<a href="http://xorm.io/" target="_blank" rel="external">http://xorm.io/</a>], 它包含了一个命令行工具用以从数据库生成databean。</p>
+<h2 id="PostgreSQL-配置"><a href="#PostgreSQL-配置" class="headerlink" title="PostgreSQL 配置"></a>PostgreSQL 配置</h2><ol>
+<li><p>在 $PGDATA 指向的文件夹里有一个文件 <code>postgresql.conf</code>, 参数<code>listen_addresses</code> 可以配置数据库的监听IP地址，默认值为 <code>localhost</code> , 如果把它的值设为 <code>*</code> 符号，表示监听全局。</p>
+<p>我这里把它的值设为 <code>*</code> ，方便Golang对数据库进行连接。<br>更多参数说明可以查看手册：<a href="http://www.postgres.cn/docs/9.3/runtime-config-file-locations.html" target="_blank" rel="external">http://www.postgres.cn/docs/9.3/runtime-config-file-locations.html</a></p>
+</li>
+</ol>
+<ol>
+<li><p>在 <code>postgresql.conf</code> 文件所在目录下，有一个文件 <code>pg_hba.conf</code>，它用以配置连接数据库的用户认证。它主要分为3个类别：<code>local Unix domain socket</code>、<code>IPV4 connect</code>、<code>IPV6 connect</code>。</p>
+<p>在 <code>TYPE</code> 一列，可以配置为 <code>local</code>、<code>host</code>、<code>hostssl</code>、<code>hostnossl</code>。  </p>
+<p>在 <code>ADDRESS</code> 一列，如果想要指向一个唯一主机，IPV4地址为：<code>IP地址/32</code>，IPV6地址为：<code>IP地址/128</code>。</p>
+<p>在 <code>METHOD</code> 一列，可以配置 <code>trust</code>, <code>reject</code>, <code>md5</code>, <code>password</code>等， <code>password</code> 和 <code>md5</code> 的区别是一个明文传输，一个加密传输。</p>
+<p>更多配置说明可以参考手册：<a href="http://www.postgres.cn/docs/9.3/auth-pg-hba-conf.html" target="_blank" rel="external">http://www.postgres.cn/docs/9.3/auth-pg-hba-conf.html</a></p>
+<p>以下是配置示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">local  all      aboo                       md5</div><div class="line"></div><div class="line">host   all      all     127.0.0.1/32       md5</div><div class="line">host   db_test  aboo    192.168.0.102/32   md5</div><div class="line"></div><div class="line">host   all      all     ::1/128            md5</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="xorm"><a href="#xorm" class="headerlink" title="xorm"></a>xorm</h2><ul>
+<li><p>添加 <code>xorm</code> 库: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">go get github.com/go-xorm/xorm</div></pre></td></tr></table></figure>
+</li>
+<li><p>添加Golang的PostgreSQL驱动 <code>lib\pg</code> 库:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">go get github.com/lib/pq</div></pre></td></tr></table></figure>
+</li>
+<li><p>下载 <code>xorm\cmd</code> 工具：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">go get github.com/go-xorm/cmd/xorm</div></pre></td></tr></table></figure>
+<p>下载完之后进入到该目录，执行 <code>go build</code> 生成脚本，方便以后生成数据Bean用。在构建这个脚本前，本地有 <code>golang.org\x\crypto</code> 和 <code>golang.org\x\net</code> 2个库，如果没有可以从GitHub下载然后添加到 <code>GOPATH</code> 中，否则无法成功。</p>
+<p>更多 xorm 相关信息可以到它官网查看：<a href="http://xorm.io" target="_blank" rel="external">http://xorm.io</a> 。</p>
+<p>在这里推荐一个Go依赖包下载工具 <code>gopm</code> : <a href="https://gopm.io" target="_blank" rel="external">https://gopm.io</a> 。</p>
+</li>
+</ul>
+<h2 id="CRUD"><a href="#CRUD" class="headerlink" title="CRUD"></a>CRUD</h2><ol>
+<li>现在数据库 <code>db_test</code> 中添加一个名为 <code>tb_user</code> 的表。</li>
+<li>使用 <code>xorm</code> 的命令行工具生成表 <code>tb_user</code> 的数据Bean，然后添加到项目中。</li>
+<li><p>为了全局能够操作同一数据库，需要使用一个单例来维护 <code>xorm</code> 的实例，在单例里面连接并初始化数据库。</p>
+<pre><code class="">connectInfo := &quot;user=aboo password=666666 dbname=db_test sslmode=disable host=192.168.0.102 port=5432&quot;
+eng,err := xorm.NewEngine(&quot;postgres&quot;, connectInfo)
+
+if err != nil {
+    logs.Info(&quot;connect db fail: &quot;, err)
+    return
+}
+logs.Info(&quot;connect db success&quot;)
+
+//连接池的空闲数大小
+eng.SetMaxIdleConns(30)
+//设置最大打开连接数
+eng.SetMaxOpenConns(30)
+//数据库操作log打印
+eng.ShowSQL(true)
+eng.Logger().SetLevel(core.LOG_INFO)
+</code></pre>
+<p> 记得要导入驱动： <code>_ &quot;github.com/lib/pq&quot;</code></p>
+</li>
+<li>查询方法： <code>Get方法</code>、<code>Find方法</code>、<code>Rows方法</code>。</li>
+<li>插入方法：<code>Insert方法</code> 或 <code>InsertOne方法</code>。</li>
+<li>更新方法：<code>Update方法</code>。</li>
+<li>删除方法: <code>Delete方法</code>。</li>
+</ol>
+<p>更多使用方法可以查看 <code>xorm</code> 官网开发文档。</p>
 
       
     </div>
@@ -381,9 +441,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/算法/" rel="tag"># 算法</a>
+            <a href="/tags/Web-Server/" rel="tag"># Web Server</a>
           
-            <a href="/tags/代码片段/" rel="tag"># 代码片段</a>
+            <a href="/tags/xorm/" rel="tag"># xorm</a>
           
         </div>
       
@@ -396,8 +456,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/12/AppNetworkStructure/" rel="next" title="App网络层的思考">
-                <i class="fa fa-chevron-left"></i> App网络层的思考
+              <a href="/2017/06/20/PostgreSQL1/" rel="next" title="PostgreSQL 上手体验">
+                <i class="fa fa-chevron-left"></i> PostgreSQL 上手体验
               </a>
             
           </div>
@@ -405,10 +465,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/12/Algorithm-QuickSort/" rel="prev" title="快速排序">
-                快速排序 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -455,8 +511,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="https://avatars2.githubusercontent.com/u/4510934?v=3&s=460"
@@ -529,6 +594,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#PostgreSQL-配置"><span class="nav-number">1.</span> <span class="nav-text">PostgreSQL 配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xorm"><span class="nav-number">2.</span> <span class="nav-text">xorm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CRUD"><span class="nav-number">3.</span> <span class="nav-text">CRUD</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
