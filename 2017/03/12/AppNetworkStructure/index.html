@@ -6,15 +6,15 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -32,7 +32,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -66,57 +66,41 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="iOS," />
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="iOS,">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
 
 
 
 
 
 
-<meta name="description" content="App开发基本离不开网络请求，网络层应该怎么去搭建才能更方便使用、更专注于业务逻辑？
-自个儿琢磨了一段时间，也参考了一些博客和开源框架，于是有了以下的网络层架构图。主要包含2大块，缓存层和网络请求层。
-
-Github:https://github.com/AbooJan/AJNetworking
-
-
-缓存层大部分App都会针对某些接口设计缓存。一方面是为了在无网络或网络请求失败的时候有数据展示，而">
+<meta name="description" content="App开发基本离不开网络请求，网络层应该怎么去搭建才能更方便使用、更专注于业务逻辑？ 自个儿琢磨了一段时间，也参考了一些博客和开源框架，于是有了以下的网络层架构图。主要包含2大块，缓存层和网络请求层。  Github:https://github.com/AbooJan/AJNetworking   缓存层大部分App都会针对某些接口设计缓存。一方面是为了在无网络或网络请求失败的时候有数据展示，而">
+<meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="App网络层的思考">
 <meta property="og:url" content="https://github.com/AbooJan/2017/03/12/AppNetworkStructure/index.html">
 <meta property="og:site_name" content="AbooJan Blog">
-<meta property="og:description" content="App开发基本离不开网络请求，网络层应该怎么去搭建才能更方便使用、更专注于业务逻辑？
-自个儿琢磨了一段时间，也参考了一些博客和开源框架，于是有了以下的网络层架构图。主要包含2大块，缓存层和网络请求层。
-
-Github:https://github.com/AbooJan/AJNetworking
-
-
-缓存层大部分App都会针对某些接口设计缓存。一方面是为了在无网络或网络请求失败的时候有数据展示，而">
-<meta property="og:image" content="https://github.com/AbooJan/2017/03/12/AppNetworkStructure/NetworkStructure.png">
+<meta property="og:description" content="App开发基本离不开网络请求，网络层应该怎么去搭建才能更方便使用、更专注于业务逻辑？ 自个儿琢磨了一段时间，也参考了一些博客和开源框架，于是有了以下的网络层架构图。主要包含2大块，缓存层和网络请求层。  Github:https://github.com/AbooJan/AJNetworking   缓存层大部分App都会针对某些接口设计缓存。一方面是为了在无网络或网络请求失败的时候有数据展示，而">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://github.com/2017/03/12/AppNetworkStructure/NetworkStructure.png">
 <meta property="og:updated_time" content="2017-03-12T03:07:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="App网络层的思考">
-<meta name="twitter:description" content="App开发基本离不开网络请求，网络层应该怎么去搭建才能更方便使用、更专注于业务逻辑？
-自个儿琢磨了一段时间，也参考了一些博客和开源框架，于是有了以下的网络层架构图。主要包含2大块，缓存层和网络请求层。
-
-Github:https://github.com/AbooJan/AJNetworking
-
-
-缓存层大部分App都会针对某些接口设计缓存。一方面是为了在无网络或网络请求失败的时候有数据展示，而">
-<meta name="twitter:image" content="https://github.com/AbooJan/2017/03/12/AppNetworkStructure/NetworkStructure.png">
+<meta name="twitter:description" content="App开发基本离不开网络请求，网络层应该怎么去搭建才能更方便使用、更专注于业务逻辑？ 自个儿琢磨了一段时间，也参考了一些博客和开源框架，于是有了以下的网络层架构图。主要包含2大块，缓存层和网络请求层。  Github:https://github.com/AbooJan/AJNetworking   缓存层大部分App都会针对某些接口设计缓存。一方面是为了在无网络或网络请求失败的时候有数据展示，而">
+<meta name="twitter:image" content="https://github.com/2017/03/12/AppNetworkStructure/NetworkStructure.png">
 
 
 
@@ -144,7 +128,7 @@ Github:https://github.com/AbooJan/AJNetworking
 
 
 
-  <link rel="canonical" href="https://github.com/AbooJan/2017/03/12/AppNetworkStructure/"/>
+  <link rel="canonical" href="https://github.com/AbooJan/2017/03/12/AppNetworkStructure/">
 
 
 
@@ -153,7 +137,7 @@ Github:https://github.com/AbooJan/AJNetworking
   <title> App网络层的思考 | AbooJan Blog </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
 
@@ -178,13 +162,13 @@ Github:https://github.com/AbooJan/AJNetworking
   <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">AbooJan Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -214,7 +198,7 @@ Github:https://github.com/AbooJan/AJNetworking
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -224,7 +208,7 @@ Github:https://github.com/AbooJan/AJNetworking
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -234,7 +218,7 @@ Github:https://github.com/AbooJan/AJNetworking
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -244,7 +228,7 @@ Github:https://github.com/AbooJan/AJNetworking
         <li class="menu-item menu-item-about">
           <a href="https://github.com/AbooJan" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
             
             关于
           </a>
@@ -278,16 +262,16 @@ Github:https://github.com/AbooJan/AJNetworking
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://github.com/AbooJan/2017/03/12/AppNetworkStructure/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="AbooJan">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/4510934?v=3&s=460">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="AbooJan Blog">
     </span>
 
@@ -326,7 +310,7 @@ Github:https://github.com/AbooJan/AJNetworking
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -337,7 +321,7 @@ Github:https://github.com/AbooJan/AJNetworking
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
                   <a href="/categories/iOS开发/" itemprop="url" rel="index">
                     <span itemprop="name">iOS开发</span>
                   </a>
@@ -378,7 +362,7 @@ Github:https://github.com/AbooJan/AJNetworking
 <ul>
 <li>Github:<a href="https://github.com/AbooJan/AJNetworking">https://github.com/AbooJan/AJNetworking</a></li>
 </ul>
-<img src="/2017/03/12/AppNetworkStructure/NetworkStructure.png" alt="网络层结构设计" title="网络层结构设计">
+<img src="/2017/03/12/AppNetworkStructure/NetworkStructure.png" title="网络层结构设计">
 <h2 id="缓存层"><a href="#缓存层" class="headerlink" title="缓存层"></a>缓存层</h2><p>大部分App都会针对某些接口设计缓存。<br>一方面是为了在无网络或网络请求失败的时候有数据展示，而不是空白一片，这样用户体验会更好；<br>另一方面是为了节省资源，如果本身接口的数据更新不频繁的，没必要每次都去发起网络请求去服务器取数据，只需读缓存就可以了，例如省市区数据。</p>
 <p>针对以上问题，我想不如每个接口都设计2个缓存配置项，一个用于配置是否需要缓存数据，另一个配置缓存过期时间。<br>在缓存有效时间内发起的网络请求，底层不会真正发起网络请求，只是去读取缓存数据然后返回结果。<br>如果缓存过期时间配置是永久有效的，则先读取缓存数据，然后发起网络请求，会回调2次。这种配置主要是为了在无网络或者是网络请求失败的时候有数据展示。</p>
 <p>在框架中，我使用了开源库 <a href="https://github.com/spotify/SPTPersistentCache">SPTPersistentCache</a>, 它是LRU缓存设计，可以设置缓存数据有效时间和缓存自动回收。</p>
@@ -484,7 +468,7 @@ Github:https://github.com/AbooJan/AJNetworking
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -494,10 +478,8 @@ Github:https://github.com/AbooJan/AJNetworking
       
 
       <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="https://avatars2.githubusercontent.com/u/4510934?v=3&s=460"
-               alt="AbooJan" />
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="https://avatars2.githubusercontent.com/u/4510934?v=3&s=460" alt="AbooJan">
           <p class="site-author-name" itemprop="name">AbooJan</p>
            
               <p class="site-description motion-element" itemprop="description">岭深常得蛟龙在，梧高自有凤凰栖</p>
@@ -508,7 +490,7 @@ Github:https://github.com/AbooJan/AJNetworking
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -596,10 +578,10 @@ Github:https://github.com/AbooJan/AJNetworking
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

@@ -6,15 +6,15 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -32,7 +32,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -66,43 +66,39 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="swift," />
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="swift,">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
 
 
 
 
 
 
-<meta name="description" content="Vapor网络框架的代码设计模式是遵循MVC的，新建文件的时候，你需要把它放进对应的文件夹，不然 vapor build 的时候会提示错误，看它的代码文件结构：
-12345// M.├── App.   └── Models.       └── User.swift
-123456// V.├── App└── Resources    └── Views         └── user.htm">
+<meta name="description" content="Vapor网络框架的代码设计模式是遵循MVC的，新建文件的时候，你需要把它放进对应的文件夹，不然 vapor build 的时候会提示错误，看它的代码文件结构： 12345// M.├── App.   └── Models.       └── User.swift 123456// V.├── App└── Resources    └── Views         └── user.htm">
+<meta name="keywords" content="swift">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vapor 实战3">
 <meta property="og:url" content="https://github.com/AbooJan/2016/10/04/VaporPractice3/index.html">
 <meta property="og:site_name" content="AbooJan Blog">
-<meta property="og:description" content="Vapor网络框架的代码设计模式是遵循MVC的，新建文件的时候，你需要把它放进对应的文件夹，不然 vapor build 的时候会提示错误，看它的代码文件结构：
-12345// M.├── App.   └── Models.       └── User.swift
-123456// V.├── App└── Resources    └── Views         └── user.htm">
+<meta property="og:description" content="Vapor网络框架的代码设计模式是遵循MVC的，新建文件的时候，你需要把它放进对应的文件夹，不然 vapor build 的时候会提示错误，看它的代码文件结构： 12345// M.├── App.   └── Models.       └── User.swift 123456// V.├── App└── Resources    └── Views         └── user.htm">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-03-12T03:41:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vapor 实战3">
-<meta name="twitter:description" content="Vapor网络框架的代码设计模式是遵循MVC的，新建文件的时候，你需要把它放进对应的文件夹，不然 vapor build 的时候会提示错误，看它的代码文件结构：
-12345// M.├── App.   └── Models.       └── User.swift
-123456// V.├── App└── Resources    └── Views         └── user.htm">
+<meta name="twitter:description" content="Vapor网络框架的代码设计模式是遵循MVC的，新建文件的时候，你需要把它放进对应的文件夹，不然 vapor build 的时候会提示错误，看它的代码文件结构： 12345// M.├── App.   └── Models.       └── User.swift 123456// V.├── App└── Resources    └── Views         └── user.htm">
 
 
 
@@ -130,7 +126,7 @@
 
 
 
-  <link rel="canonical" href="https://github.com/AbooJan/2016/10/04/VaporPractice3/"/>
+  <link rel="canonical" href="https://github.com/AbooJan/2016/10/04/VaporPractice3/">
 
 
 
@@ -139,7 +135,7 @@
   <title> Vapor 实战3 | AbooJan Blog </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
 
@@ -164,13 +160,13 @@
   <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">AbooJan Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -200,7 +196,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -210,7 +206,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -220,7 +216,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -230,7 +226,7 @@
         <li class="menu-item menu-item-about">
           <a href="https://github.com/AbooJan" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
             
             关于
           </a>
@@ -264,16 +260,16 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://github.com/AbooJan/2016/10/04/VaporPractice3/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="AbooJan">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/4510934?v=3&s=460">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="AbooJan Blog">
     </span>
 
@@ -312,7 +308,7 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -323,7 +319,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
                   <a href="/categories/Vapor/" itemprop="url" rel="index">
                     <span itemprop="name">Vapor</span>
                   </a>
@@ -360,25 +356,25 @@
 
       
         <p>Vapor网络框架的代码设计模式是遵循MVC的，新建文件的时候，你需要把它放进对应的文件夹，不然 <code>vapor build</code> 的时候会提示错误，看它的代码文件结构：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// M</div><div class="line">.</div><div class="line">├── App</div><div class="line">.   └── Models</div><div class="line">.       └── User.swift</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// V</div><div class="line">.</div><div class="line">├── App</div><div class="line">└── Resources</div><div class="line">    └── Views</div><div class="line">         └── user.html</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// C</div><div class="line">.</div><div class="line">├── App</div><div class="line">.   └── Controllers</div><div class="line">.       └── UserController.swift</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// M</span><br><span class="line">.</span><br><span class="line">├── App</span><br><span class="line">.   └── Models</span><br><span class="line">.       └── User.swift</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// V</span><br><span class="line">.</span><br><span class="line">├── App</span><br><span class="line">└── Resources</span><br><span class="line">    └── Views</span><br><span class="line">         └── user.html</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// C</span><br><span class="line">.</span><br><span class="line">├── App</span><br><span class="line">.   └── Controllers</span><br><span class="line">.       └── UserController.swift</span><br></pre></td></tr></table></figure>
 <h2 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h2><p>新建的数据模型类需要继承自 <code>Fluent</code> 框架里面的 <code>Model</code> 类，一方面是方便 <code>JSON</code> 数据的转化，另一方面是方便与数据库连接操作。</p>
 <p>继承自  <code>Model</code> 的类需要注意以下几点：</p>
 <ul>
 <li>必须添加一个 <code>id</code> 成员变量：<code>var id:Node?</code></li>
-<li>必须实现以下2个方法：<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">init</span>(node: <span class="type">Node</span>, <span class="keyword">in</span> context: <span class="type">Context</span>)</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">makeNode</span><span class="params">(context: Context)</span></span></div></pre></td></tr></table></figure></li>
-<li>必须实现协议 <code>Preparation</code> 里面的2个方法，是用于做数据库操作的，如果不需进行数据库操作，直接空实现就可以了：<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">prepare</span><span class="params">(<span class="number">_</span> database: Database)</span></span></div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">revert</span><span class="params">(<span class="number">_</span> database: Database)</span></span></div></pre></td></tr></table></figure>
+<li>必须实现以下2个方法：<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">init</span>(node: <span class="type">Node</span>, <span class="keyword">in</span> context: <span class="type">Context</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">makeNode</span><span class="params">(context: Context)</span></span></span><br></pre></td></tr></table></figure></li>
+<li>必须实现协议 <code>Preparation</code> 里面的2个方法，是用于做数据库操作的，如果不需进行数据库操作，直接空实现就可以了：<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">prepare</span><span class="params">(<span class="number">_</span> database: Database)</span></span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">revert</span><span class="params">(<span class="number">_</span> database: Database)</span></span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="View"><a href="#View" class="headerlink" title="View"></a>View</h2><p>视图文件存放在文件夹 <code>Resources</code> 的 <code>View</code> 子文件夹内，它可以是 <code>html</code> 文件，也可以是标签型语言的文件，模板项目里面的视图文件则是 <code>leaf</code> 后缀的。</p>
 <p>视图文件写好之后，则可以通过 <code>drop.view.make()</code> 函数访问，例如:</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">drop.<span class="keyword">get</span>(<span class="string">"html"</span>) &#123; request <span class="keyword">in</span> </div><div class="line">    <span class="keyword">return</span> <span class="keyword">try</span> drop.view.make(<span class="string">"index.html"</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">drop.<span class="keyword">get</span>(<span class="string">"html"</span>) &#123; request <span class="keyword">in</span> </span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">try</span> drop.view.make(<span class="string">"index.html"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="Controller"><a href="#Controller" class="headerlink" title="Controller"></a>Controller</h2><p>控制器主要是方便代码解耦，把不同的业务逻辑放到不同的控制器里面。</p>
 <p>一个简单的控制器可以像下面那样：</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloController</span> </span>&#123; </div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">sayHello</span><span class="params">(<span class="number">_</span> req: Request)</span></span> <span class="keyword">throws</span> -&gt; <span class="type">ResponseRepresentable</span> &#123; </div><div class="line">    <span class="keyword">guard</span> <span class="keyword">let</span> name = req.data[<span class="string">"name"</span>] <span class="keyword">else</span> &#123; </div><div class="line">            <span class="keyword">throw</span> <span class="type">Abort</span>.badRequest </div><div class="line">    &#125; </div><div class="line">    <span class="keyword">return</span> <span class="string">"Hello, <span class="subst">\(name)</span>"</span> </div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloController</span> </span>&#123; </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">sayHello</span><span class="params">(<span class="number">_</span> req: Request)</span></span> <span class="keyword">throws</span> -&gt; <span class="type">ResponseRepresentable</span> &#123; </span><br><span class="line">    <span class="keyword">guard</span> <span class="keyword">let</span> name = req.data[<span class="string">"name"</span>] <span class="keyword">else</span> &#123; </span><br><span class="line">            <span class="keyword">throw</span> <span class="type">Abort</span>.badRequest </span><br><span class="line">    &#125; </span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Hello, \(name)"</span> </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>然后在 <code>main.swift</code> 声明以上控制器方法：</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> hc = <span class="type">HelloController</span>();</div><div class="line">drop.<span class="keyword">get</span>(<span class="string">"hello"</span>, hc.sayHello);</div></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> hc = <span class="type">HelloController</span>();</span><br><span class="line">drop.<span class="keyword">get</span>(<span class="string">"hello"</span>, hc.sayHello);</span><br></pre></td></tr></table></figure>
 <p>这样运行项目就可以通过 <code>http://{host}/hello</code> 访问到 <code>sayHello</code> 方法了。</p>
 <h4 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h4><p><a href="https://github.com/AbooJan/VaporDemo">https://github.com/AbooJan/VaporDemo</a></p>
 
@@ -477,7 +473,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -487,10 +483,8 @@
       
 
       <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="https://avatars2.githubusercontent.com/u/4510934?v=3&s=460"
-               alt="AbooJan" />
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="https://avatars2.githubusercontent.com/u/4510934?v=3&s=460" alt="AbooJan">
           <p class="site-author-name" itemprop="name">AbooJan</p>
            
               <p class="site-description motion-element" itemprop="description">岭深常得蛟龙在，梧高自有凤凰栖</p>
@@ -501,7 +495,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -569,7 +563,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Model"><span class="nav-number">1.</span> <span class="nav-text">Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#View"><span class="nav-number">2.</span> <span class="nav-text">View</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Controller"><span class="nav-number">3.</span> <span class="nav-text">Controller</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#demo"><span class="nav-number">3.0.1.</span> <span class="nav-text">demo</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Model"><span class="nav-number">1.</span> <span class="nav-text">Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#View"><span class="nav-number">2.</span> <span class="nav-text">View</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Controller"><span class="nav-number">3.</span> <span class="nav-text">Controller</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#demo"><span class="nav-number">3.0.1.</span> <span class="nav-text">demo</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -589,10 +583,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

@@ -6,15 +6,15 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -32,7 +32,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -66,40 +66,39 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="算法,代码片段," />
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="算法,代码片段,">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
 
 
 
 
 
 
-<meta name="description" content="核心思想是分治法，将数组1分为2，通过递归，把数组拆分成很多个小数组（只有2个元素），然后对小数组进行排序，排序完之后进行合并。
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970void">
+<meta name="description" content="核心思想是分治法，将数组1分为2，通过递归，把数组拆分成很多个小数组（只有2个元素），然后对小数组进行排序，排序完之后进行合并。 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970void">
+<meta name="keywords" content="算法,代码片段">
 <meta property="og:type" content="article">
 <meta property="og:title" content="归并排序">
 <meta property="og:url" content="https://github.com/AbooJan/2017/03/12/Algorithm-MergeSort/index.html">
 <meta property="og:site_name" content="AbooJan Blog">
-<meta property="og:description" content="核心思想是分治法，将数组1分为2，通过递归，把数组拆分成很多个小数组（只有2个元素），然后对小数组进行排序，排序完之后进行合并。
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970void">
+<meta property="og:description" content="核心思想是分治法，将数组1分为2，通过递归，把数组拆分成很多个小数组（只有2个元素），然后对小数组进行排序，排序完之后进行合并。 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970void">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-03-12T10:17:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="归并排序">
-<meta name="twitter:description" content="核心思想是分治法，将数组1分为2，通过递归，把数组拆分成很多个小数组（只有2个元素），然后对小数组进行排序，排序完之后进行合并。
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970void">
+<meta name="twitter:description" content="核心思想是分治法，将数组1分为2，通过递归，把数组拆分成很多个小数组（只有2个元素），然后对小数组进行排序，排序完之后进行合并。 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970void">
 
 
 
@@ -127,7 +126,7 @@
 
 
 
-  <link rel="canonical" href="https://github.com/AbooJan/2017/03/12/Algorithm-MergeSort/"/>
+  <link rel="canonical" href="https://github.com/AbooJan/2017/03/12/Algorithm-MergeSort/">
 
 
 
@@ -136,7 +135,7 @@
   <title> 归并排序 | AbooJan Blog </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
 
@@ -161,13 +160,13 @@
   <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">AbooJan Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -197,7 +196,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -207,7 +206,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -217,7 +216,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -227,7 +226,7 @@
         <li class="menu-item menu-item-about">
           <a href="https://github.com/AbooJan" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
             
             关于
           </a>
@@ -261,16 +260,16 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://github.com/AbooJan/2017/03/12/Algorithm-MergeSort/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="AbooJan">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/4510934?v=3&s=460">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="AbooJan Blog">
     </span>
 
@@ -309,7 +308,7 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -320,7 +319,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
                   <a href="/categories/算法/" itemprop="url" rel="index">
                     <span itemprop="name">算法</span>
                   </a>
@@ -357,7 +356,7 @@
 
       
         <p>核心思想是分治法，将数组1分为2，通过递归，把数组拆分成很多个小数组（只有2个元素），然后对小数组进行排序，排序完之后进行合并。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">mergeArray</span><span class="params">(<span class="keyword">int</span> targetArr[], <span class="keyword">int</span> start, <span class="keyword">int</span> mid, <span class="keyword">int</span> last, <span class="keyword">int</span> tmpArr[])</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> k = <span class="number">0</span>;</div><div class="line">    <span class="keyword">int</span> backupStart = start;</div><div class="line">    </div><div class="line">    <span class="comment">// 把数组1分为2</span></div><div class="line">    <span class="keyword">int</span> leftArrLast = mid;</div><div class="line">    <span class="keyword">int</span> rightArrStart = mid+<span class="number">1</span>;</div><div class="line">    </div><div class="line">    <span class="comment">// 合并2个数组</span></div><div class="line">    <span class="keyword">while</span> (start &lt;= leftArrLast &amp;&amp; rightArrStart &lt;= last) &#123;</div><div class="line">        </div><div class="line">        <span class="comment">// 如果左边元素比右边元素大</span></div><div class="line">        <span class="keyword">if</span> (targetArr[start] &lt;= targetArr[rightArrStart]) &#123;</div><div class="line">            <span class="comment">// 把左边元素放入临时数组中</span></div><div class="line">            tmpArr[k] = targetArr[start];</div><div class="line">            start++;</div><div class="line">            </div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            <span class="comment">// 如果右边元素较小，把右边元素放入临时数组中</span></div><div class="line">            tmpArr[k] = targetArr[rightArrStart];</div><div class="line">            rightArrStart++;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        k++;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">// 左边2边，肯定会有1边多出有元素没比较</span></div><div class="line">    </div><div class="line">    <span class="comment">// 把左边剩余的部分放入临时数组中</span></div><div class="line">    <span class="keyword">while</span> (start &lt;= leftArrLast) &#123;</div><div class="line">        tmpArr[k] = targetArr[start];</div><div class="line">        k++;</div><div class="line">        start++;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">// 把右边剩余部分放入临时数组中</span></div><div class="line">    <span class="keyword">while</span> (rightArrStart &lt;= last) &#123;</div><div class="line">        tmpArr[k] = targetArr[rightArrStart];</div><div class="line">        k++;</div><div class="line">        rightArrStart++;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">// 把排序好的合并数组放入原来数组中，注意原来数组的开始索引，从backStart+i开始</span></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; k; i++) &#123;</div><div class="line">        targetArr[backupStart+i] = tmpArr[i];</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">mergeSort</span><span class="params">(<span class="keyword">int</span> targetArr[], <span class="keyword">int</span> start, <span class="keyword">int</span> last, <span class="keyword">int</span> tmpArr[])</span></span></div><div class="line">&#123;</div><div class="line">    </div><div class="line">    <span class="comment">// 传入1个临时的 tmpArr 是为了节省内存开销</span></div><div class="line">    </div><div class="line">    <span class="keyword">if</span> (start &lt; last) &#123;</div><div class="line">        </div><div class="line">        <span class="comment">// 1分为2，分而治之</span></div><div class="line">        <span class="keyword">int</span> mid = (start+last)/<span class="number">2</span>;</div><div class="line">        </div><div class="line">        <span class="comment">// 对左边元素进行排序</span></div><div class="line">        mergeSort(targetArr, start, mid, tmpArr);</div><div class="line">        </div><div class="line">        <span class="comment">// 对右边元素进行排序, 索引从 mid+1 开始</span></div><div class="line">        mergeSort(targetArr, mid+<span class="number">1</span>, last, tmpArr);</div><div class="line">        </div><div class="line">        <span class="comment">// 合并左右2边的排序数组</span></div><div class="line">        mergeArray(targetArr, start, mid, last, tmpArr);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">mergeArray</span><span class="params">(<span class="keyword">int</span> targetArr[], <span class="keyword">int</span> start, <span class="keyword">int</span> mid, <span class="keyword">int</span> last, <span class="keyword">int</span> tmpArr[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> k = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> backupStart = start;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 把数组1分为2</span></span><br><span class="line">    <span class="keyword">int</span> leftArrLast = mid;</span><br><span class="line">    <span class="keyword">int</span> rightArrStart = mid+<span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 合并2个数组</span></span><br><span class="line">    <span class="keyword">while</span> (start &lt;= leftArrLast &amp;&amp; rightArrStart &lt;= last) &#123;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 如果左边元素比右边元素大</span></span><br><span class="line">        <span class="keyword">if</span> (targetArr[start] &lt;= targetArr[rightArrStart]) &#123;</span><br><span class="line">            <span class="comment">// 把左边元素放入临时数组中</span></span><br><span class="line">            tmpArr[k] = targetArr[start];</span><br><span class="line">            start++;</span><br><span class="line">            </span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="comment">// 如果右边元素较小，把右边元素放入临时数组中</span></span><br><span class="line">            tmpArr[k] = targetArr[rightArrStart];</span><br><span class="line">            rightArrStart++;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        k++;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 左边2边，肯定会有1边多出有元素没比较</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 把左边剩余的部分放入临时数组中</span></span><br><span class="line">    <span class="keyword">while</span> (start &lt;= leftArrLast) &#123;</span><br><span class="line">        tmpArr[k] = targetArr[start];</span><br><span class="line">        k++;</span><br><span class="line">        start++;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 把右边剩余部分放入临时数组中</span></span><br><span class="line">    <span class="keyword">while</span> (rightArrStart &lt;= last) &#123;</span><br><span class="line">        tmpArr[k] = targetArr[rightArrStart];</span><br><span class="line">        k++;</span><br><span class="line">        rightArrStart++;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 把排序好的合并数组放入原来数组中，注意原来数组的开始索引，从backStart+i开始</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; k; i++) &#123;</span><br><span class="line">        targetArr[backupStart+i] = tmpArr[i];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">mergeSort</span><span class="params">(<span class="keyword">int</span> targetArr[], <span class="keyword">int</span> start, <span class="keyword">int</span> last, <span class="keyword">int</span> tmpArr[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 传入1个临时的 tmpArr 是为了节省内存开销</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (start &lt; last) &#123;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 1分为2，分而治之</span></span><br><span class="line">        <span class="keyword">int</span> mid = (start+last)/<span class="number">2</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 对左边元素进行排序</span></span><br><span class="line">        mergeSort(targetArr, start, mid, tmpArr);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 对右边元素进行排序, 索引从 mid+1 开始</span></span><br><span class="line">        mergeSort(targetArr, mid+<span class="number">1</span>, last, tmpArr);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 合并左右2边的排序数组</span></span><br><span class="line">        mergeArray(targetArr, start, mid, last, tmpArr);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -457,10 +456,8 @@
       
 
       <section class="site-overview sidebar-panel sidebar-panel-active">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="https://avatars2.githubusercontent.com/u/4510934?v=3&s=460"
-               alt="AbooJan" />
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="https://avatars2.githubusercontent.com/u/4510934?v=3&s=460" alt="AbooJan">
           <p class="site-author-name" itemprop="name">AbooJan</p>
            
               <p class="site-description motion-element" itemprop="description">岭深常得蛟龙在，梧高自有凤凰栖</p>
@@ -471,7 +468,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -543,10 +540,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

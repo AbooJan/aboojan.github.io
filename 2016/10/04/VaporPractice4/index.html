@@ -6,15 +6,15 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -32,7 +32,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -66,46 +66,39 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="swift," />
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="swift,">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
 
 
 
 
 
 
-<meta name="description" content="Demo中用的是Mongo DB，首先需要到它的官网下载安装程序：https://www.mongodb.com。安装配置好之后就可以进行以下操作了。
-
-下载Mongo DB数据库连接驱动，在 Package.swift 中添加下载地址：
-1.Package(url: &amp;quot;https://github.com/vapor/mongo-provider.git&amp;quot;, majorVer">
+<meta name="description" content="Demo中用的是Mongo DB，首先需要到它的官网下载安装程序：https://www.mongodb.com。安装配置好之后就可以进行以下操作了。  下载Mongo DB数据库连接驱动，在 Package.swift 中添加下载地址： 1.Package(url: &amp;quot;https://github.com/vapor/mongo-provider.git&amp;quot;, majorVer">
+<meta name="keywords" content="swift">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vapor 实战4">
 <meta property="og:url" content="https://github.com/AbooJan/2016/10/04/VaporPractice4/index.html">
 <meta property="og:site_name" content="AbooJan Blog">
-<meta property="og:description" content="Demo中用的是Mongo DB，首先需要到它的官网下载安装程序：https://www.mongodb.com。安装配置好之后就可以进行以下操作了。
-
-下载Mongo DB数据库连接驱动，在 Package.swift 中添加下载地址：
-1.Package(url: &amp;quot;https://github.com/vapor/mongo-provider.git&amp;quot;, majorVer">
+<meta property="og:description" content="Demo中用的是Mongo DB，首先需要到它的官网下载安装程序：https://www.mongodb.com。安装配置好之后就可以进行以下操作了。  下载Mongo DB数据库连接驱动，在 Package.swift 中添加下载地址： 1.Package(url: &amp;quot;https://github.com/vapor/mongo-provider.git&amp;quot;, majorVer">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-03-12T03:48:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vapor 实战4">
-<meta name="twitter:description" content="Demo中用的是Mongo DB，首先需要到它的官网下载安装程序：https://www.mongodb.com。安装配置好之后就可以进行以下操作了。
-
-下载Mongo DB数据库连接驱动，在 Package.swift 中添加下载地址：
-1.Package(url: &amp;quot;https://github.com/vapor/mongo-provider.git&amp;quot;, majorVer">
+<meta name="twitter:description" content="Demo中用的是Mongo DB，首先需要到它的官网下载安装程序：https://www.mongodb.com。安装配置好之后就可以进行以下操作了。  下载Mongo DB数据库连接驱动，在 Package.swift 中添加下载地址： 1.Package(url: &amp;quot;https://github.com/vapor/mongo-provider.git&amp;quot;, majorVer">
 
 
 
@@ -133,7 +126,7 @@
 
 
 
-  <link rel="canonical" href="https://github.com/AbooJan/2016/10/04/VaporPractice4/"/>
+  <link rel="canonical" href="https://github.com/AbooJan/2016/10/04/VaporPractice4/">
 
 
 
@@ -142,7 +135,7 @@
   <title> Vapor 实战4 | AbooJan Blog </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
 
@@ -167,13 +160,13 @@
   <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">AbooJan Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -203,7 +196,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -213,7 +206,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -223,7 +216,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -233,7 +226,7 @@
         <li class="menu-item menu-item-about">
           <a href="https://github.com/AbooJan" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
             
             关于
           </a>
@@ -267,16 +260,16 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://github.com/AbooJan/2016/10/04/VaporPractice4/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="AbooJan">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/4510934?v=3&s=460">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="AbooJan Blog">
     </span>
 
@@ -315,7 +308,7 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -326,7 +319,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
                   <a href="/categories/Vapor/" itemprop="url" rel="index">
                     <span itemprop="name">Vapor</span>
                   </a>
@@ -362,22 +355,22 @@
       
 
       
-        <p>Demo中用的是Mongo DB，首先需要到它的官网下载安装程序：<a href="https://www.mongodb.com。" target="_blank" rel="external">https://www.mongodb.com。</a><br>安装配置好之后就可以进行以下操作了。</p>
+        <p>Demo中用的是Mongo DB，首先需要到它的官网下载安装程序：<a href="https://www.mongodb.com。" target="_blank" rel="noopener">https://www.mongodb.com。</a><br>安装配置好之后就可以进行以下操作了。</p>
 <ol>
 <li><p>下载Mongo DB数据库连接驱动，在 <code>Package.swift</code> 中添加下载地址：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.Package(url: &quot;https://github.com/vapor/mongo-provider.git&quot;, majorVersion: 1, minor: 0)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.Package(url: &quot;https://github.com/vapor/mongo-provider.git&quot;, majorVersion: 1, minor: 0)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>在项目的文件夹 <code>Config</code> 下创建数据库配置文件 <code>mongo.json</code>, 在里面填写以下内容：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123; </div><div class="line">  &quot;user&quot;: &quot;数据库用户名&quot;, </div><div class="line">  &quot;password&quot;: &quot;用户名密码&quot;, </div><div class="line">  &quot;database&quot;: &quot;数据库名称&quot;, </div><div class="line">  &quot;port&quot;: &quot;端口号&quot;, </div><div class="line">  &quot;host&quot;: &quot;数据库运行地址&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123; </span><br><span class="line">  &quot;user&quot;: &quot;数据库用户名&quot;, </span><br><span class="line">  &quot;password&quot;: &quot;用户名密码&quot;, </span><br><span class="line">  &quot;database&quot;: &quot;数据库名称&quot;, </span><br><span class="line">  &quot;port&quot;: &quot;端口号&quot;, </span><br><span class="line">  &quot;host&quot;: &quot;数据库运行地址&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>在数据模型中实现协议 <code>Preparation</code> 的2个方法，示例：</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="function"><span class="keyword">func</span> <span class="title">prepare</span><span class="params">(<span class="number">_</span> database: Database)</span></span> <span class="keyword">throws</span> &#123;</div><div class="line">        </div><div class="line">        <span class="keyword">try</span> database.create(<span class="string">"Users"</span>) &#123; users <span class="keyword">in</span></div><div class="line">            users.id()</div><div class="line">            users.string(<span class="string">"name"</span>)</div><div class="line">            users.string(<span class="string">"phone"</span>)</div><div class="line">            users.string(<span class="string">"pw"</span>)</div><div class="line">            users.bool(<span class="string">"gender"</span>)</div><div class="line">            users.int(<span class="string">"age"</span>)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">static</span> <span class="function"><span class="keyword">func</span> <span class="title">revert</span><span class="params">(<span class="number">_</span> database: Database)</span></span> <span class="keyword">throws</span> &#123;</div><div class="line">        <span class="keyword">try</span> database.delete(<span class="string">"Users"</span>)</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="function"><span class="keyword">func</span> <span class="title">prepare</span><span class="params">(<span class="number">_</span> database: Database)</span></span> <span class="keyword">throws</span> &#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">try</span> database.create(<span class="string">"Users"</span>) &#123; users <span class="keyword">in</span></span><br><span class="line">            users.id()</span><br><span class="line">            users.string(<span class="string">"name"</span>)</span><br><span class="line">            users.string(<span class="string">"phone"</span>)</span><br><span class="line">            users.string(<span class="string">"pw"</span>)</span><br><span class="line">            users.bool(<span class="string">"gender"</span>)</span><br><span class="line">            users.int(<span class="string">"age"</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">static</span> <span class="function"><span class="keyword">func</span> <span class="title">revert</span><span class="params">(<span class="number">_</span> database: Database)</span></span> <span class="keyword">throws</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> database.delete(<span class="string">"Users"</span>)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>如果本身数据库模型对应的表中没有存在，需要在模型中添加以下成员变量：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var exists: Bool = false;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var exists: Bool = false;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>在 <code>main.swift</code> 中需要对数据模型和数据库驱动做声明，示例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">let drop = Droplet(preparations: [User.self], providers: [VaporMongo.Provider.self]);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let drop = Droplet(preparations: [User.self], providers: [VaporMongo.Provider.self]);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>完成以上步骤之后，就可以在控制器或其他地方进行数据库的 <code>CRUD</code> 操作了。</p>
 </li>
@@ -479,7 +472,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -489,10 +482,8 @@
       
 
       <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="https://avatars2.githubusercontent.com/u/4510934?v=3&s=460"
-               alt="AbooJan" />
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="https://avatars2.githubusercontent.com/u/4510934?v=3&s=460" alt="AbooJan">
           <p class="site-author-name" itemprop="name">AbooJan</p>
            
               <p class="site-description motion-element" itemprop="description">岭深常得蛟龙在，梧高自有凤凰栖</p>
@@ -503,7 +494,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -591,10 +582,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
